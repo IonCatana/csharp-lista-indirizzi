@@ -50,6 +50,7 @@
             return ZIP;
         }
 
+
         // Setter
         public void SetZIP(string ZIP)
         {
@@ -63,6 +64,7 @@
                 throw new Exception("Non hai inserito numeri");
             }
         }
+
 
         // Controllo se sono le stringhe null
         private static void ControlloElementi(string controllo)
