@@ -22,16 +22,31 @@ while (!file.EndOfStream)
 
     if (informazioni.Length == 6)
     {
-        string nome = informazioni[0];
-        string cognome = informazioni[1];
-        string via = informazioni[2];
-        string citta = informazioni[3];
-        string provincia = informazioni[4];
-        int ZIP = int.Parse(informazioni[5]);
+        try
+        {
+            string name = informazioni[0];
+            string surname = informazioni[1];
+            string street = informazioni[2];
+            string city = informazioni[3];
+            string province = informazioni[4];
+            string ZIP = informazioni[5];
 
-        listaIndirizzi.Add(new Indirizzo(nome, cognome, via, citta, provincia, ZIP));
+            listaIndirizzi.Add(new Indirizzo(name, surname, street, city, province, ZIP));
+            Console.WriteLine(line);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+    }
+    else
+    {
+        Console.WriteLine("Elementi inseriti non correttamente!");
     }
 
 
-
 }
+
+
+
